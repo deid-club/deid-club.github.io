@@ -126,23 +126,23 @@ What pharmaceutical companies do have at hand is the data from other trials they
 As an example, if the aggregate database of subjects in similar studies contained 12 male subjects at the age of 26, then the Re-Id risk for USUBJID=CT1/101 would be 1/12 = 0.083, etc.
 
 ###### Table 5. Applying record level risk of re-id based on similar trials dataset
-| SEX | AGE | Equiv. Class Size | |
-|:---:|:---:|:---:|---|
-| M | 26 | 12 | -> |
-| F | 28 | 32 | => |
+| SEX | AGE | Equiv. Class Size |    |
+|:---:|:---:|:-----------------:|----|
+| M   | 26  | 12                | -> |
+| F   | 28  | 32                | => |
 
-| USUBJID | SEX | AGE | | Equiv. Class (Size)| Re-Id risk |
-|---|:---:|:---:|:---:|:---:|:---:|
-| CT1/101 | M | 26| -> | A (12) | 0.083 |
-| CT1/102 | F | 28 | => | B (32) | 0.031 |
-| CT1/103 | F | 31 | | C (27) | 0.037 |
-| CT1/104 | M | 29 | | D (11) | 0.091 | 
-| CT1/105 | F | 28 | => | B (32) | 0.031 | 
-| CT1/106 | M | 30 | | E (15) | 0.067 |
-| CT1/107 | M | 29 | | D (11) | 0.091 |
-| CT1/108 | F | 32 | | F (4) | 0.250 |
-| CT1/109 | M | 29 | | D (11) | 0.091 |
-| CT1/110 | F | 31 | | C (27) | 0.037 |
+| USUBJID | SEX | AGE |     | Equiv. Class (Size)| Re-Id risk |
+|---------|:---:|:---:|:---:|:------------------:|:----------:|
+| CT1/101 | M   | 26  | ->  | A (12)             | 0.083      |
+| CT1/102 | F   | 28  | =>  | B (32)             | 0.031      |
+| CT1/103 | F   | 31  |     | C (27)             | 0.037      |
+| CT1/104 | M   | 29  |     | D (11)             | 0.091      | 
+| CT1/105 | F   | 28  | =>  | B (32)             | 0.031      |
+| CT1/106 | M   | 30  |     | E (15)             | 0.067      |
+| CT1/107 | M   | 29  |     | D (11)             | 0.091      |
+| CT1/108 | F   | 32  |     | F (4)              | 0.250      |
+| CT1/109 | M   | 29  |     | D (11)             | 0.091      |
+| CT1/110 | F   | 31  |     | C (27)             | 0.037      |
 
 Although the risks calculated using this approach will be higher than those based on general population, they are much more straight forward to apply and easier to defend if methods are questioned. Crucially, they are more conservative than general population risks but will typically be significantly lower than risks calculated solely on the study population. In the example, CT1/101 has a risk of re-identification of 1 within the study population, but this value is reduced to 0.083 when similar studies are taken into account. 
 Across the data set this will mean less de-identification efforts and more data usability.
@@ -155,12 +155,12 @@ The average risk will be the mean of all individual risks across the dataset.
 In the example sets, for study population only, these will be:
 
 > Pr~max~(re-id | attempt) = max (1, 0.5, 0.5, 0.33, 0.5, 1, 0.33, 1, 0.33, 0.5) = 1
-Pr~avg~(re-id | attempt) = (1+0.5+0.5+0.33+0.5+1+0.33+1+0.33+0.5) / 10 = 0.6
+> Pr~avg~(re-id | attempt) = (1+0.5+0.5+0.33+0.5+1+0.33+1+0.33+0.5) / 10 = 0.6
 
 while risks across similar trials:
 
 > Pr~max~(re-id | attempt) = max (0.083, 0.031, 0.037, 0.091, 0.031, 0.067, 0.091, 0.250, 0.091, 0.037) = 0.25
-Pr~avg~(re-id | attempt) = (0.083+0.031+0.037+0.091+0.031+0.067+0.091+0.250+0.091+0.037) / 10 = 0.081
+> Pr~avg~(re-id | attempt) = (0.083+0.031+0.037+0.091+0.031+0.067+0.091+0.250+0.091+0.037) / 10 = 0.081
 
 The maximum risk is by definition no lower than the average risk and is therefore much stricter.
 When data is released to the public domain and there is no control over who receives the data and how they choose to use it, it has to be presumed that an attack will be attempted. And because the likely target of an attack will be the records with highest probability of re-identification, the maximum risk has to be considered for those scenarios.
@@ -181,10 +181,10 @@ The first step is to derive the overall risk of re-identification which is the p
 This way average and maximum risk of data set re-identification can be calculated. The same formula will apply to study population and across similar trials. The following set of characteristics will be produced:
 
 ###### Table 6. Calculated metrics for the example dataset
-| | Pr~max~(re-id) | Pr~avg~(re-id) | % of not k-anonymous records (k=2) |
-|---|:---:|:---:|:---:|
-| Study population | 1    | 0.6   | 30% |
-| Similar trials   | 0.25 | 0.081 |    0% |
+|                  | Pr~max~(re-id) | Pr~avg~(re-id) | % of not k-anonymous records (k=2) |
+|------------------|:--------------:|:--------------:|:----------------------------------:|
+| Study population | 1              | 0.6            | 30%                                |
+| Similar trials   | 0.25           | 0.081          |  0%                                |
 
 ### THRESHOLDS AND RIGHT LEVEL OF DE-IDENTIFICATION
 The three characteristics can subsequently be compared to the assumed thresholds to assess if re-identification is sufficient or if further data perturbation is required.
@@ -196,15 +196,15 @@ For public release, the selected threshold will be applied to the maximum calcul
 Using the values calculated previously in combination with different contexts of data release, below are some examples which illustrate that the same values may be sufficient in some scenarios and unacceptable in others.
 ###### Table 7. Risk calculations for different data release contexts
 | Context | Estimated risk of attempt in the context | Pr~max~(re-id) / Threshold | Pr~avg~(re-id) / Threshold | % of not k-anonymous records (k=2) / acceptable value | Result |
-|---|:---:|:---:|:---:|:---:|:---:|
-| Trusted recipient/ Secure portal/ Study population | 0.1 | 0.1 / NA | 0.06 / 0.09 | 30% / 1% | **Not sufficient** |
-| Trusted recipient/ Secure portal/ Similar Trials | 0.1 | 0.025 / NA | 0.008 / 0.09 | 0% / 1% | Sufficient |
-| Trusted recipient/ Data on CD-ROM/ Study population | 0.27 | 0.27 / NA | 0.162 / 0.09 | 30% / 0% | **Not sufficient** |
-| Trusted recipient/ Data on CD-ROM / Similar Trials | 0.27 | 0.067 / NA | 0.022 / 0.09 | 0% / 0%	 | Sufficient |
-| Unknown recipient/ Secure portal/ Study population | 0.5 | 0.5 / NA | 0.3 / 0.09 | 30% / 0% | **Not sufficient** |
-| Unknown recipient/ Secure portal/ Similar Trials | 0.5 | 0.125 / NA | 0.041 / 0.09 | 0% / 0% | Sufficient |
-| Public release/ Study population | 1 | 1 / 0.09 | 1 / NA | 30% / 0% | **Not sufficient** |
-| Public release/ Similar Trials | 1 | 0.25 / 0.09 | 0.081 / NA | 30% / 0% \* |	**Not sufficient** |
+|-----------------------------------------------------|:----:|:-----------:|:------------:|:-----------:|:------------------:|
+| Trusted recipient/ Secure portal/ Study population  | 0.1  | 0.1 / NA    | 0.06 / 0.09  | 30% / 1%    | **Not sufficient** |
+| Trusted recipient/ Secure portal/ Similar Trials    | 0.1  | 0.025 / NA  | 0.008 / 0.09 | 0% / 1%     | Sufficient         |
+| Trusted recipient/ Data on CD-ROM/ Study population | 0.27 | 0.27 / NA   | 0.162 / 0.09 | 30% / 0%    | **Not sufficient** |
+| Trusted recipient/ Data on CD-ROM / Similar Trials  | 0.27 | 0.067 / NA  | 0.022 / 0.09 | 0% / 0%	    | Sufficient         |
+| Unknown recipient/ Secure portal/ Study population  | 0.5  | 0.5 / NA    | 0.3 / 0.09   | 30% / 0%    | **Not sufficient** |
+| Unknown recipient/ Secure portal/ Similar Trials    | 0.5  | 0.125 / NA  | 0.041 / 0.09 | 0% / 0%     | Sufficient         |
+| Public release/ Study population                    | 1    | 1 / 0.09    | 1 / NA       | 30% / 0%    | **Not sufficient** |
+| Public release/ Similar Trials                      | 1    | 0.25 / 0.09 | 0.081 / NA   | 30% / 0% \* |	**Not sufficient** |
 \*) For public release k-anonymity is calculated for study population only
 
 Based on these examples it can be concluded that the context can significantly impact the estimated risk. If the control measures under which the data is released cannot be changed then the only practical solution to lower the overall risk is to undergo another iteration of data manipulation.
@@ -213,30 +213,30 @@ When risks are calculated using similar trials, all but the public release scena
 To lower the risk of re-identification when attempted and to address the k-anonymity issue, data would require further manipulation. In the example data set the practical options would be to categorize age values into groups. The below example shows this scenario and updated risk values:
 ###### Table 8. Updated dataset with categorized age and recalculated record level risks
 | USUBJID | SEX | AGE | AGE~DE-ID~ | Equiv. Class (Size) | Re-Id risk |
-|---|:---:|:---:|:---:|:---:|:---:|
-| CT1/101 | M | 26 | 21-30 | X (5) | 0.2  |
-| CT1/102 | F | 28 | 21-30 | Y (2) | 0.5  |
-| CT1/103 | F | 31 | 31-40 | Z (3) | 0.33 |
-| CT1/104 | M | 29 | 21-30 | X (5) | 0.2  |
-| CT1/105 | F | 28 | 21-30 | Y (2) | 0.5  |
-| CT1/106 | M | 30 | 21-30 | X (5) | 0.2  |
-| CT1/107 | M | 29 | 21-30 | X (5) | 0.2  |
-| CT1/108 | F | 32 | 31-40 | Z (3) | 0.33 |
-| CT1/109 | M | 29 | 21-30 | X (5) | 0.2  |
-| CT1/110 | F | 31 | 31-40 | Z (3) | 0.33 |
+|---------|:---:|:---:|:----------:|:-------------------:|:----------:|
+| CT1/101 | M   | 26  | 21-30      | X (5)               | 0.2        |
+| CT1/102 | F   | 28  | 21-30      | Y (2)               | 0.5        |
+| CT1/103 | F   | 31  | 31-40      | Z (3)               | 0.33       |
+| CT1/104 | M   | 29  | 21-30      | X (5)               | 0.2        |
+| CT1/105 | F   | 28  | 21-30      | Y (2)               | 0.5        |
+| CT1/106 | M   | 30  | 21-30      | X (5)               | 0.2        |
+| CT1/107 | M   | 29  | 21-30      | X (5)               | 0.2        |
+| CT1/108 | F   | 32  | 31-40      | Z (3)               | 0.33       |
+| CT1/109 | M   | 29  | 21-30      | X (5)               | 0.2        |
+| CT1/110 | F   | 31  | 31-40      | Z (3)               | 0.33       |
 
 ###### Table 9. Re-calculated metrics for the example dataset
-| | Prmax(re-id) | Pravg(re-id) | % of not k-anonymous records (k=2) |
-|---|:---:|:---:|:---:|
-| Study population | 0.5 | 0.3 | 0% |
+|                  | Prmax(re-id) | Pravg(re-id) | % of not k-anonymous records (k=2) |
+|------------------|:------------:|:------------:|:----------------------------------:|
+| Study population | 0.5          | 0.3          | 0%                                 |
 
 ###### Table 10. Updated risk calculations for different data release contexts
 | Context  | Estimated risk of attempt in the context | Pr~max~(re-id) / Threshold | Pr~avg~(re-id) / Threshold | % of not k-anonymous records (k=2) / acceptable value | Result |
-|---|:---:|:---:|:---:|:---:|:---:|
-| Trusted recipient/ Secure portal/ Study population | 0.1 | 0.050 / NA | 0.030 / 0.09 | 0% / 1% | Sufficient |
-| Trusted recipient/ Data on CD-ROM/ Study population | 0.27 | 0.135 / NA | 0.081 / 0.09 | 0% / 0% | Sufficient |
-| Unknown recipient/ Secure portal/ Study population | 0.5 | 0.250 / NA | 0.150 / 0.09 | 0% / 0% | **Not sufficient** |
-| Public release/ Study population | 1 | 0.500 / 0.09 | 0.300 / NA | 33% / 0% | **Not sufficient** |
+|-----------------------------------------------------|:----:|:------------:|:------------:|:--------:|:------------------:|
+| Trusted recipient/ Secure portal/ Study population  | 0.1  | 0.050 / NA   | 0.030 / 0.09 | 0% / 1%  | Sufficient         |
+| Trusted recipient/ Data on CD-ROM/ Study population | 0.27 | 0.135 / NA   | 0.081 / 0.09 | 0% / 0%  | Sufficient         |
+| Unknown recipient/ Secure portal/ Study population  | 0.5  | 0.250 / NA   | 0.150 / 0.09 | 0% / 0%  | **Not sufficient** |
+| Public release/ Study population                    | 1    | 0.500 / 0.09 | 0.300 / NA   | 33% / 0% | **Not sufficient** |
 
 Table 10 only shows values for study population calculations. Values for similar trials would be reduced even more than those for study population as equivalence groups would also be derived using categorized age groups. And so where for subject CT1-101 there were 12 equivalent records where SEX=M and AGE=26, across similar trials, after categorization the equivalence group will be made of records where SEX=M and AGEDE-ID=21, 22…, 30 across similar trials.
 
@@ -283,11 +283,11 @@ European Medicines Agency. (2016). EMA/90915/2016 - External guidance on the imp
 #### CONTACT INFORMATION
 Your comments and questions are valued and encouraged.  Contact the author at:
 >Lukasz Kniola
-Biogen Idec Ltd
-Innovation House
-70 Norden Road
-Maidenhead, Berkshire SL6 4AY
-UK
-Email: lukasz.kniola@biogen.com
+>Biogen Idec Ltd
+>Innovation House
+>70 Norden Road
+>Maidenhead, Berkshire SL6 4AY
+>UK
+>Email: lukasz.kniola@biogen.com
 
 Brand and product names are trademarks of their respective companies. 
