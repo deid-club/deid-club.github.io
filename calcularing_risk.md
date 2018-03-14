@@ -285,13 +285,14 @@ European Medicines Agency. (2014). EMA/240810/2013 - Publication of clinical dat
 European Medicines Agency. (2016). EMA/90915/2016 - External guidance on the implementation of the European Medicines Agency policy on the publication of clinical data for medicinal products for human use. http://www.ema.europa.eu 
 
 #### CONTACT INFORMATION
-Your comments and questions are valued and encouraged.  Contact the author at:
+Your comments and questions are valued and encouraged.  Contact the author at: 
+
 Lukasz Kniola
-Biogen Idec Ltd
-Innovation House
-70 Norden Road
-Maidenhead, Berkshire SL6 4AY
-UK
+Biogen Idec Ltd 
+Innovation House 
+70 Norden Road 
+Maidenhead, Berkshire SL6 4AY 
+UK 
 Email: lukasz.kniola@biogen.com
 
 Brand and product names are trademarks of their respective companies. 
