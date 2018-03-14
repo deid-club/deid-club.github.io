@@ -208,6 +208,7 @@ Using the values calculated previously in combination with different contexts of
 | Unknown recipient/ Secure portal/ Similar Trials    | 0.5  | 0.125 / NA  | 0.041 / 0.09 | 0% / 0%     | Sufficient         |
 | Public release/ Study population                    | 1    | 1 / 0.09    | 1 / NA       | 30% / 0%    | **Not sufficient** |
 | Public release/ Similar Trials                      | 1    | 0.25 / 0.09 | 0.081 / NA   | 30% / 0% \* |	**Not sufficient** |
+
 \*) For public release k-anonymity is calculated for study population only
 
 Based on these examples it can be concluded that the context can significantly impact the estimated risk. If the control measures under which the data is released cannot be changed then the only practical solution to lower the overall risk is to undergo another iteration of data manipulation.
@@ -285,18 +286,12 @@ European Medicines Agency. (2016). EMA/90915/2016 - External guidance on the imp
 
 #### CONTACT INFORMATION
 Your comments and questions are valued and encouraged.  Contact the author at:
->Lukasz Kniola
-
->Biogen Idec Ltd
-
->Innovation House
-
->70 Norden Road
-
->Maidenhead, Berkshire SL6 4AY
-
->UK
-
->Email: lukasz.kniola@biogen.com
+Lukasz Kniola
+Biogen Idec Ltd
+Innovation House
+70 Norden Road
+Maidenhead, Berkshire SL6 4AY
+UK
+Email: lukasz.kniola@biogen.com
 
 Brand and product names are trademarks of their respective companies. 
