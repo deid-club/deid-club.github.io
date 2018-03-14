@@ -57,7 +57,8 @@ In order to estimate this risk in the context of clinical trials two values need
 - Average number of friends people tend to have – according to the leading anthropologist Robin Dunbar this is about 150.
 - Prevalence of the disease that the clinical trial is targeting. This is defined as number of cases of the disease divided by the population of the region in question.
 Using those values, the probability of acquaintance can be calculated using the following formula:
-> Pr(acquaintance)=1-(1-(Disease Cases/Population))^150^
+
+> Pr(acquaintance)=1-(1-(Disease Cases/Population))<sup>150</sup>
 
 Using example prevalence and population values in Table 1, risk of acquaintance can be calculated as per Table 2. 
 ###### Table 1. Prevalence of MS and general population
@@ -154,13 +155,15 @@ The maximum risk will take the highest value of all individual risks for all rec
 The average risk will be the mean of all individual risks across the dataset.
 In the example sets, for study population only, these will be:
 
-> Pr~max~(re-id | attempt) = max (1, 0.5, 0.5, 0.33, 0.5, 1, 0.33, 1, 0.33, 0.5) = 1
-> Pr~avg~(re-id | attempt) = (1+0.5+0.5+0.33+0.5+1+0.33+1+0.33+0.5) / 10 = 0.6
+> Pr<sub>max</sub>(re-id | attempt) = max (1, 0.5, 0.5, 0.33, 0.5, 1, 0.33, 1, 0.33, 0.5) = 1
+
+> Pr<sub>avg</sub>(re-id | attempt) = (1+0.5+0.5+0.33+0.5+1+0.33+1+0.33+0.5) / 10 = 0.6
 
 while risks across similar trials:
 
-> Pr~max~(re-id | attempt) = max (0.083, 0.031, 0.037, 0.091, 0.031, 0.067, 0.091, 0.250, 0.091, 0.037) = 0.25
-> Pr~avg~(re-id | attempt) = (0.083+0.031+0.037+0.091+0.031+0.067+0.091+0.250+0.091+0.037) / 10 = 0.081
+> Pr<sub>max</sub>(re-id | attempt) = max (0.083, 0.031, 0.037, 0.091, 0.031, 0.067, 0.091, 0.250, 0.091, 0.037) = 0.25
+
+> Pr<sub>avg</sub>(re-id | attempt) = (0.083+0.031+0.037+0.091+0.031+0.067+0.091+0.250+0.091+0.037) / 10 = 0.081
 
 The maximum risk is by definition no lower than the average risk and is therefore much stricter.
 When data is released to the public domain and there is no control over who receives the data and how they choose to use it, it has to be presumed that an attack will be attempted. And because the likely target of an attack will be the records with highest probability of re-identification, the maximum risk has to be considered for those scenarios.
@@ -181,7 +184,7 @@ The first step is to derive the overall risk of re-identification which is the p
 This way average and maximum risk of data set re-identification can be calculated. The same formula will apply to study population and across similar trials. The following set of characteristics will be produced:
 
 ###### Table 6. Calculated metrics for the example dataset
-|                  | Pr~max~(re-id) | Pr~avg~(re-id) | % of not k-anonymous records (k=2) |
+|                  | Pr<sub>max</sub>(re-id) | Pr<sub>avg</sub>(re-id) | % of not k-anonymous records (k=2) |
 |------------------|:--------------:|:--------------:|:----------------------------------:|
 | Study population | 1              | 0.6            | 30%                                |
 | Similar trials   | 0.25           | 0.081          |  0%                                |
@@ -195,7 +198,7 @@ For public release, the selected threshold will be applied to the maximum calcul
 
 Using the values calculated previously in combination with different contexts of data release, below are some examples which illustrate that the same values may be sufficient in some scenarios and unacceptable in others.
 ###### Table 7. Risk calculations for different data release contexts
-| Context | Estimated risk of attempt in the context | Pr~max~(re-id) / Threshold | Pr~avg~(re-id) / Threshold | % of not k-anonymous records (k=2) / acceptable value | Result |
+| Context | Estimated risk of attempt in the context | Pr<sub>max</sub>(re-id) / Threshold | Pr<sub>avg</sub>(re-id) / Threshold | % of not k-anonymous records (k=2) / acceptable value | Result |
 |-----------------------------------------------------|:----:|:-----------:|:------------:|:-----------:|:------------------:|
 | Trusted recipient/ Secure portal/ Study population  | 0.1  | 0.1 / NA    | 0.06 / 0.09  | 30% / 1%    | **Not sufficient** |
 | Trusted recipient/ Secure portal/ Similar Trials    | 0.1  | 0.025 / NA  | 0.008 / 0.09 | 0% / 1%     | Sufficient         |
@@ -212,7 +215,7 @@ The example data set used in this paper only consists of ten records. It is ther
 When risks are calculated using similar trials, all but the public release scenarios show that the risk of re-identification is below the threshold of 0.09. However, even in those scenarios the level of de-identification would not be sufficient since the proportion of records not meeting the k-anonymity criteria is too high (33.3%).
 To lower the risk of re-identification when attempted and to address the k-anonymity issue, data would require further manipulation. In the example data set the practical options would be to categorize age values into groups. The below example shows this scenario and updated risk values:
 ###### Table 8. Updated dataset with categorized age and recalculated record level risks
-| USUBJID | SEX | AGE | AGE~DE-ID~ | Equiv. Class (Size) | Re-Id risk |
+| USUBJID | SEX | AGE | AGE<sub>DE-ID</sub> | Equiv. Class (Size) | Re-Id risk |
 |---------|:---:|:---:|:----------:|:-------------------:|:----------:|
 | CT1/101 | M   | 26  | 21-30      | X (5)               | 0.2        |
 | CT1/102 | F   | 28  | 21-30      | Y (2)               | 0.5        |
@@ -226,12 +229,12 @@ To lower the risk of re-identification when attempted and to address the k-anony
 | CT1/110 | F   | 31  | 31-40      | Z (3)               | 0.33       |
 
 ###### Table 9. Re-calculated metrics for the example dataset
-|                  | Prmax(re-id) | Pravg(re-id) | % of not k-anonymous records (k=2) |
+|                  | Pr<sub>max</sub>(re-id) | Pr<sub>avg</sub>(re-id) | % of not k-anonymous records (k=2) |
 |------------------|:------------:|:------------:|:----------------------------------:|
 | Study population | 0.5          | 0.3          | 0%                                 |
 
 ###### Table 10. Updated risk calculations for different data release contexts
-| Context  | Estimated risk of attempt in the context | Pr~max~(re-id) / Threshold | Pr~avg~(re-id) / Threshold | % of not k-anonymous records (k=2) / acceptable value | Result |
+| Context  | Estimated risk of attempt in the context | Pr<sub>max</sub>(re-id) / Threshold | Pr<sub>avg</sub>(re-id) / Threshold | % of not k-anonymous records (k=2) / acceptable value | Result |
 |-----------------------------------------------------|:----:|:------------:|:------------:|:--------:|:------------------:|
 | Trusted recipient/ Secure portal/ Study population  | 0.1  | 0.050 / NA   | 0.030 / 0.09 | 0% / 1%  | Sufficient         |
 | Trusted recipient/ Data on CD-ROM/ Study population | 0.27 | 0.135 / NA   | 0.081 / 0.09 | 0% / 0%  | Sufficient         |
@@ -283,11 +286,17 @@ European Medicines Agency. (2016). EMA/90915/2016 - External guidance on the imp
 #### CONTACT INFORMATION
 Your comments and questions are valued and encouraged.  Contact the author at:
 >Lukasz Kniola
+
 >Biogen Idec Ltd
+
 >Innovation House
+
 >70 Norden Road
+
 >Maidenhead, Berkshire SL6 4AY
+
 >UK
+
 >Email: lukasz.kniola@biogen.com
 
 Brand and product names are trademarks of their respective companies. 
