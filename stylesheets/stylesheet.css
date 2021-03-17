@@ -5,6 +5,7 @@ by Jason Costello, @jsncostello
 
 @import url(github-light.css);
 
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400&family=Open+Sans&family=Roboto:wght@100;300;400;700&family=Roboto+Slab:wght@100;300;400;700&family=Roboto+Mono&display=swap');
 /*******************************************************************************
 MeyerWeb Reset
 *******************************************************************************/
@@ -52,23 +53,24 @@ body {
   box-sizing: border-box;
   color:#373737;
   background: #212121;
-  font-size: 16px;
-  font-family: 'Myriad Pro', Calibri, Helvetica, Arial, sans-serif;
+  font-size: 18px;
+  font-family: "Open Sans", Calibri, Helvetica, Arial, sans-serif;
+  font-weight: 300;
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
 }
 
 h1, h2, h3, h4, h5, h6 {
   margin: 10px 0;
-  font-weight: 700;
+  font-weight: 300;
   color:#222222;
-  font-family: 'Lucida Grande', 'Calibri', Helvetica, Arial, sans-serif;
+  font-family: "Open Sans", Calibri, Helvetica, Arial, sans-serif;
   letter-spacing: -1px;
 }
 
 h1 {
   font-size: 36px;
-  font-weight: 700;
+  font-weight: 300;
 }
 
 h2 {
@@ -82,15 +84,16 @@ h3 {
 }
 
 h4 {
-  font-size: 21px;
+  font-size: 22px;
 }
 
 h5 {
-  font-size: 18px;
+  font-size: 20px;
 }
 
 h6 {
-  font-size: 16px;
+  font-size: 18px;
+  font-weight: 700;
 }
 
 p {
@@ -164,7 +167,7 @@ pre, code {
   color: #222;
   background-color: #fff;
 
-  font-family: Monaco, "Bitstream Vera Sans Mono", "Lucida Console", Terminal, monospace;
+  font-family: "Roboto Mono", Monaco, "Bitstream Vera Sans Mono", "Lucida Console", Terminal, monospace;
   font-size: 14px;
 
   border-radius: 2px;
@@ -242,7 +245,7 @@ table {
  }
 
 th {
-  font-family: 'Lucida Grande', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: "Roboto", 'Lucida Grande', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   padding: 10px;
   background: #373737;
   color: #fff;
@@ -268,7 +271,7 @@ Full-Width Styles
 
 .inner {
   position: relative;
-  max-width: 640px;
+  max-width: 800px;
   padding: 20px 10px;
   margin: 0 auto;
 }
@@ -298,9 +301,17 @@ Full-Width Styles
 }
 
 #header_wrap .inner {
-  padding: 50px 10px 30px 10px;
+  padding: 20px 10px 20px 10px;
 }
 
+#navi_wrap {
+  background: #ddb824;
+}
+  
+#navi_wrap .inner {
+  padding: 1px 10px 1px 10px;
+}
+  
 #project_title {
   margin: 0;
   color: #fff;
@@ -378,7 +389,7 @@ Small Device Styles
 
 @media screen and (max-width: 480px) {
   body {
-    font-size:14px;
+    font-size:16px;
   }
 
   #downloads {
@@ -411,17 +422,17 @@ Small Device Styles
   }
 
   h5 {
-    font-size: 14px;
+    font-size: 16px;
   }
 
   h6 {
-    font-size: 12px;
+    font-size: 14px;
   }
 
   code, pre {
     min-width: 320px;
     max-width: 480px;
-    font-size: 11px;
+    font-size: 12px;
   }
 
 }
