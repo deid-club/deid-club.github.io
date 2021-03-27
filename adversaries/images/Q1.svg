@@ -1,0 +1,71 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="835" height="1463" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <line x1="210" x2="210" y1="200" y2="1400" style="stroke:rgb(200,200,200); stroke-width:1" />
+ <text x="210" y="190" font-family="Roboto" font-size="20" text-anchor="middle" fill="black">25%</text>
+ <line x1="410" x2="410" y1="200" y2="1400" style="stroke:rgb(200,200,200); stroke-width:1" />
+ <text x="410" y="190" font-family="Roboto" font-size="20" text-anchor="middle" fill="black">50%</text>
+ <line x1="610" x2="610" y1="200" y2="1400" style="stroke:rgb(200,200,200); stroke-width:1" />
+ <text x="610" y="190" font-family="Roboto" font-size="20" text-anchor="middle" fill="black">75%</text>
+ <line x1="808" x2="808" y1="200" y2="1400" style="stroke:rgb(200,200,200); stroke-width:1" />
+ <text x="808" y="190" font-family="Roboto" font-size="20" text-anchor="middle" fill="black">100%</text>
+ <rect x="15" y="130" width="40" height="20" style="fill:rgb(51, 153, 51);stroke-width:1;stroke:rgb(255,255,255)" />
+ <text x="60" y="147" font-family="Roboto" font-size="22" fill="black">Low</text>
+ <rect x="135" y="130" width="40" height="20" style="fill:rgb(255, 153, 0);stroke-width:1;stroke:rgb(255,255,255)" />
+ <text x="180" y="147" font-family="Roboto" font-size="22" fill="black">Medium</text>
+ <rect x="285" y="130" width="40" height="20" style="fill:rgb(204, 0, 0);stroke-width:1;stroke:rgb(255,255,255)" />
+ <text x="330" y="147" font-family="Roboto" font-size="22" fill="black">High</text>
+ <text x="10" y="50" font-family="Roboto" font-size="27" fill="black">Q1: What is the likely level of motivation to attempt re-identification</text>
+ <text x="10" y="85" font-family="Roboto" font-size="27" fill="black">of specific subject or any subject in the data set?</text>
+ <rect x=" 10" y=" 250" width="363.63636364" height=" 55" style="fill:rgb(51, 153, 51);stroke-width:2;stroke:rgb(255,255,255)" fill="url(#diag1)" />
+ <rect x="373.63636364" y=" 250" width="254.54545455" height=" 55" style="fill:rgb(255, 153, 0);stroke-width:2;stroke:rgb(255,255,255)" />
+ <rect x="628.18181818" y=" 250" width="181.81818182" height=" 55" style="fill:rgb(204, 0, 0);stroke-width:2;stroke:rgb(255,255,255)" />
+ <text x="15" y="246" font-family="Roboto" font-size="25" fill="black" >Patients themselves</text>
+ <rect x=" 10" y=" 350" width="363.63636364" height=" 55" style="fill:rgb(51, 153, 51);stroke-width:2;stroke:rgb(255,255,255)" fill="url(#diag1)" />
+ <rect x="373.63636364" y=" 350" width="218.18181818" height=" 55" style="fill:rgb(255, 153, 0);stroke-width:2;stroke:rgb(255,255,255)" />
+ <rect x="591.81818182" y=" 350" width="218.18181818" height=" 55" style="fill:rgb(204, 0, 0);stroke-width:2;stroke:rgb(255,255,255)" />
+ <text x="15" y="346" font-family="Roboto" font-size="25" fill="black" >Family members</text>
+ <rect x=" 10" y=" 450" width="533.33333333" height=" 55" style="fill:rgb(51, 153, 51);stroke-width:2;stroke:rgb(255,255,255)" fill="url(#diag1)" />
+ <rect x="543.33333333" y=" 450" width="228.57142857" height=" 55" style="fill:rgb(255, 153, 0);stroke-width:2;stroke:rgb(255,255,255)" />
+ <rect x=" 771.9047619" y=" 450" width="38.095238095" height=" 55" style="fill:rgb(204, 0, 0);stroke-width:2;stroke:rgb(255,255,255)" />
+ <text x="15" y="446" font-family="Roboto" font-size="25" fill="black" >Acquaintances / Colleagues</text>
+ <rect x=" 10" y=" 550" width="545.45454545" height=" 55" style="fill:rgb(51, 153, 51);stroke-width:2;stroke:rgb(255,255,255)" fill="url(#diag1)" />
+ <rect x="555.45454545" y=" 550" width="181.81818182" height=" 55" style="fill:rgb(255, 153, 0);stroke-width:2;stroke:rgb(255,255,255)" />
+ <rect x="737.27272727" y=" 550" width="72.727272727" height=" 55" style="fill:rgb(204, 0, 0);stroke-width:2;stroke:rgb(255,255,255)" />
+ <text x="15" y="546" font-family="Roboto" font-size="25" fill="black" >Employers</text>
+ <rect x=" 10" y=" 650" width="363.63636364" height=" 55" style="fill:rgb(51, 153, 51);stroke-width:2;stroke:rgb(255,255,255)" fill="url(#diag1)" />
+ <rect x="373.63636364" y=" 650" width="436.36363636" height=" 55" style="fill:rgb(255, 153, 0);stroke-width:2;stroke:rgb(255,255,255)" />
+ <rect x=" 810" y=" 650" width=" 0" height=" 55" style="fill:rgb(204, 0, 0);stroke-width:2;stroke:rgb(255,255,255)" />
+ <text x="15" y="646" font-family="Roboto" font-size="25" fill="black" >Doctors</text>
+ <rect x=" 10" y=" 750" width="342.85714286" height=" 55" style="fill:rgb(51, 153, 51);stroke-width:2;stroke:rgb(255,255,255)" fill="url(#diag1)" />
+ <rect x="352.85714286" y=" 750" width="304.76190476" height=" 55" style="fill:rgb(255, 153, 0);stroke-width:2;stroke:rgb(255,255,255)" />
+ <rect x="657.61904762" y=" 750" width="152.38095238" height=" 55" style="fill:rgb(204, 0, 0);stroke-width:2;stroke:rgb(255,255,255)" />
+ <text x="15" y="746" font-family="Roboto" font-size="25" fill="black" >Lawyers</text>
+ <rect x=" 10" y=" 850" width="36.363636364" height=" 55" style="fill:rgb(51, 153, 51);stroke-width:2;stroke:rgb(255,255,255)" fill="url(#diag1)" />
+ <rect x="46.363636364" y=" 850" width="327.27272727" height=" 55" style="fill:rgb(255, 153, 0);stroke-width:2;stroke:rgb(255,255,255)" />
+ <rect x="373.63636364" y=" 850" width="436.36363636" height=" 55" style="fill:rgb(204, 0, 0);stroke-width:2;stroke:rgb(255,255,255)" />
+ <text x="15" y="846" font-family="Roboto" font-size="25" fill="black" >Journalists</text>
+ <rect x=" 10" y=" 950" width="254.54545455" height=" 55" style="fill:rgb(51, 153, 51);stroke-width:2;stroke:rgb(255,255,255)" fill="url(#diag1)" />
+ <rect x="264.54545455" y=" 950" width="290.90909091" height=" 55" style="fill:rgb(255, 153, 0);stroke-width:2;stroke:rgb(255,255,255)" />
+ <rect x="555.45454545" y=" 950" width="254.54545455" height=" 55" style="fill:rgb(204, 0, 0);stroke-width:2;stroke:rgb(255,255,255)" />
+ <text x="15" y="946" font-family="Roboto" font-size="25" fill="black" >Insurance Companies</text>
+ <rect x=" 10" y=" 1050" width="521.73913043" height=" 55" style="fill:rgb(51, 153, 51);stroke-width:2;stroke:rgb(255,255,255)" fill="url(#diag1)" />
+ <rect x="531.73913043" y=" 1050" width="139.13043478" height=" 55" style="fill:rgb(255, 153, 0);stroke-width:2;stroke:rgb(255,255,255)" />
+ <rect x="670.86956522" y=" 1050" width="139.13043478" height=" 55" style="fill:rgb(204, 0, 0);stroke-width:2;stroke:rgb(255,255,255)" />
+ <text x="15" y="1046" font-family="Roboto" font-size="25" fill="black" >University students / Academic researchers</text>
+ <rect x=" 10" y=" 1150" width="695.65217391" height=" 55" style="fill:rgb(51, 153, 51);stroke-width:2;stroke:rgb(255,255,255)" fill="url(#diag1)" />
+ <rect x="705.65217391" y=" 1150" width="104.34782609" height=" 55" style="fill:rgb(255, 153, 0);stroke-width:2;stroke:rgb(255,255,255)" />
+ <rect x=" 810" y=" 1150" width=" 0" height=" 55" style="fill:rgb(204, 0, 0);stroke-width:2;stroke:rgb(255,255,255)" />
+ <text x="15" y="1146" font-family="Roboto" font-size="25" fill="black" >Regulatory bodies</text>
+ <rect x=" 10" y=" 1250" width="452.17391304" height=" 55" style="fill:rgb(51, 153, 51);stroke-width:2;stroke:rgb(255,255,255)" fill="url(#diag1)" />
+ <rect x="462.17391304" y=" 1250" width="208.69565217" height=" 55" style="fill:rgb(255, 153, 0);stroke-width:2;stroke:rgb(255,255,255)" />
+ <rect x="670.86956522" y=" 1250" width="139.13043478" height=" 55" style="fill:rgb(204, 0, 0);stroke-width:2;stroke:rgb(255,255,255)" />
+ <text x="15" y="1246" font-family="Roboto" font-size="25" fill="black" >Other sponsors/vendors (competitors)</text>
+ <rect x=" 10" y=" 1350" width="36.363636364" height=" 55" style="fill:rgb(51, 153, 51);stroke-width:2;stroke:rgb(255,255,255)" fill="url(#diag1)" />
+ <rect x="46.363636364" y=" 1350" width="145.45454545" height=" 55" style="fill:rgb(255, 153, 0);stroke-width:2;stroke:rgb(255,255,255)" />
+ <rect x="191.81818182" y=" 1350" width="618.18181818" height=" 55" style="fill:rgb(204, 0, 0);stroke-width:2;stroke:rgb(255,255,255)" />
+ <text x="15" y="1346" font-family="Roboto" font-size="25" fill="black" >Hackers (demonstration attacks)</text>
+ <text x="10" y="1459" font-family="Roboto" font-size="24" fill="black" >Note: Answered as "Don't know" or missing, across all categories: 4.0%.</text>
+ <text x="13" y="190" font-family="Roboto" font-size="20" text-anchor="middle" fill="black">0%</text>
+ <line x1="10" x2="10" y1="200" y2="1412" style="stroke:rgb(120,120,120); stroke-width:2" />
+</svg>
